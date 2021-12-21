@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.6
+
+* Connection Restored Handler.
+
 ## 0.0.5
 
 * Hotfix.
