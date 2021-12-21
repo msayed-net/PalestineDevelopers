@@ -32,7 +32,7 @@ Just as easy as this
 final PalestineConnection connection = PalestineConnection();
 connection.initialize(
     periodicInSeconds: 3, // 3 seconds
-    onNotConnected: () {
+    onConnectionLost: () {
       // No Internet
     },
     onConnectionRestored: () {
@@ -46,7 +46,7 @@ It could get more easier actually
 ```dart
 PalestineConnection().initialize(
     periodicInSeconds: 3, // 3 seconds
-    onNotConnected: () {
+    onConnectionLost: () {
       // No Internet
     },
     onConnectionRestored: () {

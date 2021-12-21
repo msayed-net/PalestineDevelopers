@@ -6,7 +6,7 @@ void main() {
   final PalestineConnection connection = PalestineConnection();
   connection.initialize(
     periodicInSeconds: 3,
-    onNotConnected: () {
+    onConnectionLost: () {
       developer.log('No Internet');
     },
     onConnectionRestored: () {
