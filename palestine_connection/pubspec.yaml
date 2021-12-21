@@ -1,0 +1,11 @@
+name: palestine_connection
+description: Simple internet connection checker.
+version: 0.0.2-dev
+
+homepage: https://github.com/msayed-net/PalestineDevelopers
+
+environment:
+  sdk: ">=2.15.0 <3.0.0"
+
+dev_dependencies:
+  lints: ^1.0.0
