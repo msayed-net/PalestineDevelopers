@@ -1,16 +1,24 @@
 import 'dart:async';
 import 'dart:developer' as developer;
+import 'dart:html';
 import 'dart:io';
 
 class PalestineConnection {
   factory PalestineConnection() => _singleton;
-  PalestineConnection._internal();
+  PalestineConnection._internal() {
+    developer.log('--PalestineConnection-- (Instance Created --> Singleton)');
+  }
   static final PalestineConnection _singleton = PalestineConnection._internal();
 
   bool hasConnection = false;
   late Timer timer;
+  late VoidCallback _onNotConnected;
 
-  void initialize({required int periodicInSeconds}) {
+  void initialize({
+    required int periodicInSeconds,
+    required VoidCallback onNotConnected,
+  }) {
+    _onNotConnected = onNotConnected;
     timer = Timer.periodic(Duration(seconds: periodicInSeconds), (Timer timer) {
       checkConnection();
     });
@@ -30,7 +38,10 @@ class PalestineConnection {
       hasConnection = false;
     }
 
-    developer.log('--AppConnection-- (state): ${hasConnection ? "Connected" : "Not Connected"}');
+    if (!hasConnection) {
+      // developer.log('--PalestineConnection-- (state) - Not Connected');
+      _onNotConnected();
+    }
 
     return hasConnection;
   }

@@ -30,13 +30,23 @@ Just as easy as this
 
 ```dart
 final PalestineConnection connection = PalestineConnection();
-connection.initialize(periodicInSeconds: 3); // 3 seconds
+connection.initialize(
+    periodicInSeconds: 3, // 3 seconds
+    onNotConnected: () {
+      // No Internet
+    },
+  );
 ```
 
 It could get more easier actually
 
 ```dart
-PalestineConnection().initialize(periodicInSeconds: 3); // 3 seconds
+PalestineConnection().initialize(
+    periodicInSeconds: 3, // 3 seconds
+    onNotConnected: () {
+      // No Internet
+    },
+  ); // 3 seconds
 ```
 
 Then you could dispose it

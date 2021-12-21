@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.1
+
+* First release.
+
 ## 0.0.3-dev
 
 * Docs - fix.
