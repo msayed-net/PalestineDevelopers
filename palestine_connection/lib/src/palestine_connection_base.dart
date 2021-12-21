@@ -9,9 +9,15 @@ class PalestineConnection {
   }
   static final PalestineConnection _singleton = PalestineConnection._internal();
 
+  /// Connection check variable
   bool hasConnection = false;
+
+  /// Timer object
   late Timer timer;
 
+  ///---
+  /// initialize package
+  ///---
   /// Start periodic process to check connection..
   void initialize({
     String domain = PalestineConnectionDomain.google,
@@ -22,7 +28,8 @@ class PalestineConnection {
     bool notifyConnectionRestore = false;
     bool notifyConnectionLost = true;
 
-    timer = Timer.periodic(Duration(seconds: periodicInSeconds), (Timer timer) async {
+    timer = Timer.periodic(Duration(seconds: periodicInSeconds),
+        (Timer timer) async {
       final bool state = await checkConnection(domain);
 
       if (!state && notifyConnectionLost) {
@@ -44,7 +51,10 @@ class PalestineConnection {
     timer.cancel();
   }
 
-  // Connection Tester..
+  ///---
+  /// Connection Check
+  ///---
+  /// Should not be invoked directly
   Future<bool> checkConnection(String domain) async {
     try {
       final List<InternetAddress> result = await InternetAddress.lookup(domain);
