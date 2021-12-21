@@ -15,12 +15,21 @@ class PalestineConnection {
   void initialize({
     required int periodicInSeconds,
     required onNotConnected,
+    required onConnectionRestored,
   }) {
+    bool notifyConnectionRestore = false;
+
     timer = Timer.periodic(Duration(seconds: periodicInSeconds), (Timer timer) async {
       final bool state = await checkConnection();
 
       if (!state) {
+        notifyConnectionRestore = true;
         onNotConnected();
+      }
+
+      if (state && notifyConnectionRestore) {
+        notifyConnectionRestore = false;
+        onConnectionRestored();
       }
     });
   }

@@ -9,5 +9,8 @@ void main() {
     onNotConnected: () {
       developer.log('No Internet');
     },
+    onConnectionRestored: () {
+      developer.log('Connection Restored');
+    },
   ); // 3 seconds
 }
