@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.9
+
+* Docs.
+
 ## 0.0.8
 
 * Connection Lost Notify only once.

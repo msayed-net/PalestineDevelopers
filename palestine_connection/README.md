@@ -1,15 +1,15 @@
 # palestine_connection
 
-Internet connection testing
+Simple internet connection checker, Try to lookup Google base domain.
 
 [![Pub](https://img.shields.io/badge/Palestine%20Connection-pub-blue)](https://pub.dev/packages/palestine_connection)
 [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/palestine_connection#-example-tab-)
 
-Part of PalestineDevelopers project :heart: soon
+Part of PalestineDevelopers project
 
-<!-- [![Fork](https://img.shields.io/github/forks/msayed-net/PalestineDevelopers?style=social)](https://github.com/msayed-net/PalestineDevelopers/fork)
+[![Fork](https://img.shields.io/github/forks/msayed-net/PalestineDevelopers?style=social)](https://github.com/msayed-net/PalestineDevelopers/fork)
 [![Star](https://img.shields.io/github/stars/msayed-net/PalestineDevelopers?style=social)](https://github.com/msayed-net/PalestineDevelopers/stargazers)
-[![Watch](https://img.shields.io/github/watchers/msayed-net/PalestineDevelopers?style=social)](https://github.com/msayed-net/PalestineDevelopers/)   -->
+[![Watch](https://img.shields.io/github/watchers/msayed-net/PalestineDevelopers?style=social)](https://github.com/msayed-net/PalestineDevelopers/)  
 
 ## Features
 
