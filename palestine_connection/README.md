@@ -35,6 +35,9 @@ connection.initialize(
     onNotConnected: () {
       // No Internet
     },
+    onConnectionRestored: () {
+      // Internet is back
+    },
   );
 ```
 
@@ -45,6 +48,9 @@ PalestineConnection().initialize(
     periodicInSeconds: 3, // 3 seconds
     onNotConnected: () {
       // No Internet
+    },
+    onConnectionRestored: () {
+      // Internet is back
     },
   ); // 3 seconds
 ```
