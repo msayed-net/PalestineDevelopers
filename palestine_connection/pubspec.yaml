@@ -1,6 +1,6 @@
 name: palestine_connection
-description: Simple internet connection checker, Try to lookup Google base domain.
-version: 0.0.9
+description: Lightweight internet connection test, lookup Google domain.
+version: 0.0.10
 
 homepage: https://github.com/msayed-net/PalestineDevelopers
 

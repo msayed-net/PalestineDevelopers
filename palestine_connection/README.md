@@ -1,6 +1,6 @@
 # palestine_connection
 
-Simple internet connection checker, Try to lookup Google base domain.
+Lightweight internet connection test, lookup Google domain.
 
 [![Pub](https://img.shields.io/badge/Palestine%20Connection-pub-blue)](https://pub.dev/packages/palestine_connection)
 [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/palestine_connection#-example-tab-)
