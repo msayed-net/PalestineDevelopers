@@ -2,7 +2,7 @@
 
 * Improvements
 
-## 0.0.2-dev
+## 0.0.3-dev
 
 * Docs - fix.
 
