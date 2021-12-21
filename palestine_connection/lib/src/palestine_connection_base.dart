@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:developer' as developer;
-import 'dart:html';
 import 'dart:io';
 
 class PalestineConnection {
@@ -12,15 +11,17 @@ class PalestineConnection {
 
   bool hasConnection = false;
   late Timer timer;
-  late VoidCallback _onNotConnected;
 
   void initialize({
     required int periodicInSeconds,
-    required VoidCallback onNotConnected,
+    required onNotConnected,
   }) {
-    _onNotConnected = onNotConnected;
-    timer = Timer.periodic(Duration(seconds: periodicInSeconds), (Timer timer) {
-      checkConnection();
+    timer = Timer.periodic(Duration(seconds: periodicInSeconds), (Timer timer) async {
+      final bool state = await checkConnection();
+
+      if (!state) {
+        onNotConnected();
+      }
     });
   }
 
@@ -36,11 +37,6 @@ class PalestineConnection {
       hasConnection = result.isNotEmpty && result[0].rawAddress.isNotEmpty;
     } on SocketException catch (_) {
       hasConnection = false;
-    }
-
-    if (!hasConnection) {
-      // developer.log('--PalestineConnection-- (state) - Not Connected');
-      _onNotConnected();
     }
 
     return hasConnection;
