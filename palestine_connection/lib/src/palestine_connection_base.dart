@@ -12,7 +12,9 @@ class PalestineConnection {
   bool hasConnection = false;
   late Timer timer;
 
+  /// Start periodic process to check connection..
   void initialize({
+    String domain = PalestineConnectionDomain.google,
     required int periodicInSeconds,
     required onConnectionLost,
     required onConnectionRestored,
@@ -21,7 +23,7 @@ class PalestineConnection {
     bool notifyConnectionLost = true;
 
     timer = Timer.periodic(Duration(seconds: periodicInSeconds), (Timer timer) async {
-      final bool state = await checkConnection();
+      final bool state = await checkConnection(domain);
 
       if (!state && notifyConnectionLost) {
         notifyConnectionRestore = true;
@@ -37,14 +39,15 @@ class PalestineConnection {
     });
   }
 
+  /// Stop the process..
   void dispose() {
     timer.cancel();
   }
 
-  //The test to actually see if there is a connection
-  Future<bool> checkConnection() async {
+  // Connection Tester..
+  Future<bool> checkConnection(String domain) async {
     try {
-      final List<InternetAddress> result = await InternetAddress.lookup('google.com');
+      final List<InternetAddress> result = await InternetAddress.lookup(domain);
 
       hasConnection = result.isNotEmpty && result[0].rawAddress.isNotEmpty;
     } on SocketException catch (_) {
@@ -53,4 +56,19 @@ class PalestineConnection {
 
     return hasConnection;
   }
+}
+
+class PalestineConnectionDomain {
+  static const String google = 'google.com';
+  static const String github = 'github.com';
+  static const String yahoo = 'yahoo.com';
+  static const String facebook = 'facebook.com';
+  static const String microsoft = 'microsoft.com';
+  static const String youtube = 'youtube.com';
+  static const String twitter = 'twitter.com';
+  static const String wikipedia = 'wikipedia.com';
+  static const String instagram = 'instagram.com';
+
+  /// CHINA
+  static const String baidu = 'baidu.com';
 }

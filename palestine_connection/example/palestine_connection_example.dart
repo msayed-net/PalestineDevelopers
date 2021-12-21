@@ -5,12 +5,13 @@ import 'package:palestine_connection/palestine_connection.dart';
 void main() {
   final PalestineConnection connection = PalestineConnection();
   connection.initialize(
-    periodicInSeconds: 3,
+    domain: PalestineConnectionDomain.google, // Domain To Test On (optional)
+    periodicInSeconds: 3, // 3 seconds
     onConnectionLost: () {
       developer.log('No Internet');
     },
     onConnectionRestored: () {
       developer.log('Connection Restored');
     },
-  ); // 3 seconds
+  );
 }
