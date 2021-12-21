@@ -2,7 +2,7 @@
 
 Lightweight internet connection test, lookup Google domain.
 
-[![Github](https://img.shields.io/github/forks/msayed-net/PalestineDevelopers?style=social)](https://github.com/msayed-net/PalestineDevelopers)
+[![License](https://img.shields.io/github/license/msayed-net/PalestineDevelopers)](https://github.com/msayed-net/PalestineDevelopers)
 [![Pub](https://img.shields.io/badge/Palestine%20Connection-pub-blue)](https://pub.dev/packages/palestine_connection)
 [![Example](https://img.shields.io/badge/Example-Ex-success)](https://pub.dev/packages/palestine_connection#-example-tab-)
 
