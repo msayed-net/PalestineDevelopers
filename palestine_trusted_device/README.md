@@ -31,7 +31,7 @@ Just as easy as this
 ```dart
 PalestineTrustedDevice.check(
       onFail: () {
-        developer.log('Not Secure Env - Closing App..');
+        // Not Secure Env Detected
       },
     );
 ```
@@ -45,7 +45,7 @@ PalestineTrustedDevice.check(
       checkOnExternalStorage: false, // Android
       checkRooted: true, // Android + IOS
       onFail: () {
-        developer.log('Not Secure Env - Closing App..');
+        // Not Secure Env Detected
       },
     );
 ```
@@ -55,7 +55,7 @@ It's possible to await until the check is done
 ```dart
 await PalestineTrustedDevice.check(
       onFail: () {
-        developer.log('Not Secure Env - Closing App..');
+        // Not Secure Env Detected
       },
     );
 ```

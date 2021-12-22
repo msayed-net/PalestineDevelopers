@@ -1,5 +1,3 @@
-import 'dart:developer' as developer;
-
 import 'package:flutter/material.dart';
 import 'package:palestine_trusted_device/palestine_trusted_device.dart';
 
@@ -23,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       checkOnExternalStorage: false,
       checkRooted: true,
       onFail: () {
-        developer.log('Not Secure Env - Closing App..');
+        // Not Secure Env Detected
       },
     );
     super.initState();
