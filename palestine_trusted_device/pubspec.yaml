@@ -1,6 +1,6 @@
 name: palestine_trusted_device
 description: Check if the device is trustworthy, rooted, jailbroken, developer mode is on, ...etc.
-version: 0.0.1-dev
+version: 0.0.1
 
 homepage: https://github.com/msayed-net/PalestineDevelopers
 
@@ -22,4 +22,4 @@ flutter:
         package: net.msayed.palestine_trusted_device
         pluginClass: PalestineTrustedDevicePlugin
       ios:
-        pluginClass: PalestineTrustedDevice
+        pluginClass: PalestineTrustedDevicePlugin

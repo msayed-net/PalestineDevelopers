@@ -15,7 +15,6 @@ Part of PalestineDevelopers project
 ## Features
 
 * Android/IOS security checks
-* dispose method
 
 ## Getting started
 
@@ -30,36 +29,33 @@ import 'package:palestine_trusted_device/palestine_trusted_device.dart';
 Just as easy as this
 
 ```dart
-final PalestineConnection connection = PalestineConnection();
-connection.initialize(
-    domain: PalestineConnectionDomain.google, // Domain To Test On (optional)
-    periodicInSeconds: 3, // 3 seconds
-    onConnectionLost: () {
-      // No Internet
-    },
-    onConnectionRestored: () {
-      // Internet is back
-    },
-  );
+PalestineTrustedDevice.check(
+      onFail: () {
+        developer.log('Not Secure Env - Closing App..');
+      },
+    );
 ```
 
-It could get more easier actually
+Customizing checks available too
 
 ```dart
-PalestineConnection().initialize(
-    domain: PalestineConnectionDomain.google, // Domain To Test On (optional)
-    periodicInSeconds: 3, // 3 seconds
-    onConnectionLost: () {
-      // No Internet
-    },
-    onConnectionRestored: () {
-      // Internet is back
-    },
-  );
+PalestineTrustedDevice.check(
+      checkRealDevice: true, // Android + IOS
+      checkDevMode: false, // Android
+      checkOnExternalStorage: false, // Android
+      checkRooted: true, // Android + IOS
+      onFail: () {
+        developer.log('Not Secure Env - Closing App..');
+      },
+    );
 ```
 
-Then you could dispose it
+It's possible to await until the check is done
 
 ```dart
-connection.dispose();
+await PalestineTrustedDevice.check(
+      onFail: () {
+        developer.log('Not Secure Env - Closing App..');
+      },
+    );
 ```

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer' as developer;
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PalestineTrustedDevice {
@@ -18,10 +19,13 @@ class PalestineTrustedDevice {
     bool checkRealDevice = true,
     bool checkOnExternalStorage = true,
     bool checkDevMode = true,
+    required VoidCallback onFail,
   }) async {
     if (!Platform.isAndroid && !Platform.isIOS) {
       return Future<bool>.value(true);
     }
+
+    bool trust = true;
 
     // Android | IOS
     if (checkRealDevice) {
@@ -29,7 +33,7 @@ class PalestineTrustedDevice {
 
       if (!isRealDevice) {
         developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (!isRealDevice)');
-        return Future<bool>.value(false);
+        trust = false;
       }
     }
 
@@ -39,7 +43,7 @@ class PalestineTrustedDevice {
 
       if (isDevModeActive) {
         developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (isDevModeActive)');
-        return Future<bool>.value(false);
+        trust = false;
       }
     }
 
@@ -49,7 +53,7 @@ class PalestineTrustedDevice {
 
       if (isOnExternalStorage) {
         developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (isOnExternalStorage)');
-        return Future<bool>.value(false);
+        trust = false;
       }
     }
 
@@ -59,10 +63,12 @@ class PalestineTrustedDevice {
 
       if (isRooted) {
         developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (Rooted)');
-        return Future<bool>.value(false);
+        trust = false;
       }
     }
 
-    return Future<bool>.value(true);
+    onFail();
+
+    return trust;
   }
 }
