@@ -8,11 +8,14 @@ import 'package:flutter/services.dart';
 class PalestineTrustedDevice {
   factory PalestineTrustedDevice() => _singleton;
   PalestineTrustedDevice._internal() {
-    developer.log('--PalestineTrustedDevice-- (Instance Created --> Singleton)');
+    developer
+        .log('--PalestineTrustedDevice-- (Instance Created --> Singleton)');
   }
-  static final PalestineTrustedDevice _singleton = PalestineTrustedDevice._internal();
+  static final PalestineTrustedDevice _singleton =
+      PalestineTrustedDevice._internal();
 
-  static const MethodChannel _channel = MethodChannel('palestine_trusted_device');
+  static const MethodChannel _channel =
+      MethodChannel('palestine_trusted_device');
 
   static Future<bool> check({
     bool checkRooted = true,
@@ -29,30 +32,36 @@ class PalestineTrustedDevice {
 
     // Android | IOS
     if (checkRealDevice) {
-      final bool isRealDevice = await _channel.invokeMethod('isRealDevice') as bool;
+      final bool isRealDevice =
+          await _channel.invokeMethod('isRealDevice') as bool;
 
       if (!isRealDevice) {
-        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (!isRealDevice)');
+        developer.log(
+            '--PalestineTrustedDevice-- (Security) - FAIL - (!isRealDevice)');
         trust = false;
       }
     }
 
     // Android
     if (checkDevMode && Platform.isAndroid) {
-      final bool isDevModeActive = await _channel.invokeMethod('isDevModeActive') as bool;
+      final bool isDevModeActive =
+          await _channel.invokeMethod('isDevModeActive') as bool;
 
       if (isDevModeActive) {
-        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (isDevModeActive)');
+        developer.log(
+            '--PalestineTrustedDevice-- (Security) - FAIL - (isDevModeActive)');
         trust = false;
       }
     }
 
     // Android
     if (checkOnExternalStorage && Platform.isAndroid) {
-      final bool isOnExternalStorage = await _channel.invokeMethod('isOnExternalStorage') as bool;
+      final bool isOnExternalStorage =
+          await _channel.invokeMethod('isOnExternalStorage') as bool;
 
       if (isOnExternalStorage) {
-        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (isOnExternalStorage)');
+        developer.log(
+            '--PalestineTrustedDevice-- (Security) - FAIL - (isOnExternalStorage)');
         trust = false;
       }
     }
@@ -62,7 +71,8 @@ class PalestineTrustedDevice {
       final bool isRooted = await _channel.invokeMethod('isRooted') as bool;
 
       if (isRooted) {
-        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (Rooted)');
+        developer
+            .log('--PalestineTrustedDevice-- (Security) - FAIL - (Rooted)');
         trust = false;
       }
     }
