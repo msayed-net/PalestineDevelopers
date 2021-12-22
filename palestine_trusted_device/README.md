@@ -1,6 +1,6 @@
 # palestine_connection
 
-Lightweight internet connection test, lookup Google domain.
+Native Device security checks, Rooted/Jailbroken, Not real device, Developer mode is on, On external drive.
 
 [![License](https://img.shields.io/github/license/msayed-net/PalestineDevelopers)](https://github.com/msayed-net/PalestineDevelopers)
 [![Pub](https://img.shields.io/badge/Palestine%20Trusted%20Device-pub-blue)](https://pub.dev/packages/palestine_trusted_device)
