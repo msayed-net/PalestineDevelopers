@@ -1,0 +1,68 @@
+import 'dart:async';
+import 'dart:developer' as developer;
+import 'dart:io';
+
+import 'package:flutter/services.dart';
+
+class PalestineTrustedDevice {
+  factory PalestineTrustedDevice() => _singleton;
+  PalestineTrustedDevice._internal() {
+    developer.log('--PalestineTrustedDevice-- (Instance Created --> Singleton)');
+  }
+  static final PalestineTrustedDevice _singleton = PalestineTrustedDevice._internal();
+
+  static const MethodChannel _channel = MethodChannel('palestine_trusted_device');
+
+  static Future<bool> check({
+    bool checkRooted = true,
+    bool checkRealDevice = true,
+    bool checkOnExternalStorage = true,
+    bool checkDevMode = true,
+  }) async {
+    if (!Platform.isAndroid && !Platform.isIOS) {
+      return Future<bool>.value(true);
+    }
+
+    // Android | IOS
+    if (checkRealDevice) {
+      final bool isRealDevice = await _channel.invokeMethod('isRealDevice') as bool;
+
+      if (!isRealDevice) {
+        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (!isRealDevice)');
+        return Future<bool>.value(false);
+      }
+    }
+
+    // Android
+    if (checkDevMode && Platform.isAndroid) {
+      final bool isDevModeActive = await _channel.invokeMethod('isDevModeActive') as bool;
+
+      if (isDevModeActive) {
+        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (isDevModeActive)');
+        return Future<bool>.value(false);
+      }
+    }
+
+    // Android
+    if (checkOnExternalStorage && Platform.isAndroid) {
+      final bool isOnExternalStorage = await _channel.invokeMethod('isOnExternalStorage') as bool;
+
+      if (isOnExternalStorage) {
+        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (isOnExternalStorage)');
+        return Future<bool>.value(false);
+      }
+    }
+
+    // Android | IOS
+    if (checkRooted) {
+      final bool isRooted = await _channel.invokeMethod('isRooted') as bool;
+
+      if (isRooted) {
+        developer.log('--PalestineTrustedDevice-- (Security) - FAIL - (Rooted)');
+        return Future<bool>.value(false);
+      }
+    }
+
+    return Future<bool>.value(true);
+  }
+}
