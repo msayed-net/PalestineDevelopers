@@ -14,9 +14,14 @@ class PalestineTrustedDevice {
   static final PalestineTrustedDevice _singleton =
       PalestineTrustedDevice._internal();
 
+  /// channel name
   static const MethodChannel _channel =
       MethodChannel('palestine_trusted_device');
 
+  ///---
+  ///check device security
+  ///---
+  /// checkRooted | checkRealDevice | checkOnExternalStorage | checkDevMode
   static Future<bool> check({
     bool checkRooted = true,
     bool checkRealDevice = true,
