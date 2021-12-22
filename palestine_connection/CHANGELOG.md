@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.12
+
+* Docs.
+
 ## 0.0.11
 
 * Improvements
