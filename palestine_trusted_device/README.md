@@ -1,4 +1,4 @@
-# palestine_connection
+# palestine_trusted_device
 
 Native Device security checks, Rooted/Jailbroken, Not real device, Developer mode is on, On external drive.
 
