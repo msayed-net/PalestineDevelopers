@@ -1,6 +1,6 @@
 name: palestine_trusted_device
 description: Check if the device is trustworthy, rooted, jailbroken, developer mode is on, ...etc.
-version: 0.0.2
+version: 0.0.3
 
 homepage: https://github.com/msayed-net/PalestineDevelopers
 
