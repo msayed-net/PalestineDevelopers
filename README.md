@@ -34,4 +34,4 @@ soon
 
 ## Notes
 
-[Contributing](#CONTRIBUTING.md)
+[Contributing](CONTRIBUTING.md)
