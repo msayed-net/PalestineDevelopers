@@ -32,4 +32,6 @@ soon
 
 ---
 
-### All Contributions Are Welcomed
+## Notes
+
+[Contributing](#CONTRIBUTING.md)
