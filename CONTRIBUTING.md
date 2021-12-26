@@ -54,7 +54,7 @@ Note: More guides and templates will be added soon
 
 ### Code Review
 
-This section guides you through submitting an enhancement suggestion for PalestineDevelopers, including completely new features and minor improvements to existing functionality. Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
+This section guides you through submitting a code review for PalestineDevelopers, Following these guidelines helps maintainers and the community understand your suggestion :pencil: and find related suggestions :mag_right:.
 
 Note: More guides and templates will be added soon
 
