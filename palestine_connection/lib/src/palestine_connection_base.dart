@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:developer' as developer;
+import 'dart:html';
 import 'dart:io';
 
 class PalestineConnection {
@@ -20,16 +21,30 @@ class PalestineConnection {
   ///---
   /// Start periodic process to check connection..
   void initialize({
-    String domain = PalestineConnectionDomain.google,
+    String domain = PalestineConnectionDomain.random,
     required int periodicInSeconds,
-    required onConnectionLost,
-    required onConnectionRestored,
+    required VoidCallback onConnectionLost,
+    required VoidCallback onConnectionRestored,
   }) {
     bool notifyConnectionRestore = false;
     bool notifyConnectionLost = true;
 
     timer = Timer.periodic(Duration(seconds: periodicInSeconds),
         (Timer timer) async {
+      if (domain == PalestineConnectionDomain.random) {
+        final List<String> _domainsList = <String>[
+          PalestineConnectionDomain.google,
+          PalestineConnectionDomain.github,
+          PalestineConnectionDomain.yahoo,
+          PalestineConnectionDomain.facebook,
+          PalestineConnectionDomain.microsoft,
+          PalestineConnectionDomain.youtube,
+          PalestineConnectionDomain.twitter,
+          PalestineConnectionDomain.wikipedia,
+          PalestineConnectionDomain.instagram,
+        ];
+        domain = (_domainsList..shuffle()).first;
+      }
       final bool state = await checkConnection(domain);
 
       if (!state && notifyConnectionLost) {
@@ -69,6 +84,7 @@ class PalestineConnection {
 }
 
 class PalestineConnectionDomain {
+  static const String random = 'random';
   static const String google = 'google.com';
   static const String github = 'github.com';
   static const String yahoo = 'yahoo.com';

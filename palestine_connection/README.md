@@ -47,7 +47,7 @@ It could get more easier actually
 
 ```dart
 PalestineConnection().initialize(
-    domain: PalestineConnectionDomain.google, // Domain To Test On (optional)
+    domain: PalestineConnectionDomain.random, // Random choices "changing"
     periodicInSeconds: 3, // 3 seconds
     onConnectionLost: () {
       // No Internet

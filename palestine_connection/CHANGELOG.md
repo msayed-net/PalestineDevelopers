@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.13
+
+* Add random option for domain choice.
+
 ## 0.0.12
 
 * Docs.
