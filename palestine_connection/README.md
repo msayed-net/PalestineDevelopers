@@ -30,9 +30,9 @@ import 'package:palestine_connection/palestine_connection.dart';
 Just as easy as this
 
 ```dart
-final PalestineConnection connection = PalestineConnection();
+final PalConnection connection = PalConnection();
 connection.initialize(
-    domain: PalestineConnectionDomain.google, // Domain To Test On (optional)
+    domain: PalDomain.google, // Domain To Test On (optional)
     periodicInSeconds: 3, // 3 seconds
     onConnectionLost: () {
       // No Internet
@@ -46,8 +46,8 @@ connection.initialize(
 It could get more easier actually
 
 ```dart
-PalestineConnection().initialize(
-    domain: PalestineConnectionDomain.random, // Random choices "changing"
+PalConnection().initialize(
+    domain: PalDomain.random, // Random choices "changing"
     periodicInSeconds: 3, // 3 seconds
     onConnectionLost: () {
       // No Internet

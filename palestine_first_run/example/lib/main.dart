@@ -22,11 +22,10 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     Future.delayed(Duration.zero, () async {
-      final bool isFirstRun = await PalestineFirstRun.isFirstRun();
+      final bool isFirstRun = await PalFirstRun.isFirstRun();
       developer.log(isFirstRun.toString());
 
-      final bool isFirstAPICall =
-          await PalestineFirstRun.isFirstCall('call_api');
+      final bool isFirstAPICall = await PalFirstRun.isFirstCall('call_api');
       developer.log(isFirstAPICall.toString());
     });
   }

@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    PalestineTrustedDevice.check(
+    PalTrustedDevice.check(
       checkRealDevice: true,
       checkDevMode: false,
       checkOnExternalStorage: false,

@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.14 | 0.0.15
+
+* Shorten names.
+
 ## 0.0.13
 
 * Add random option for domain choice.

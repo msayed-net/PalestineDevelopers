@@ -40,12 +40,12 @@ Just as easy as this
 
 ```dart
 // First time (true), then (false)
-final bool isFirstRun = await PalestineFirstRun.isFirstRun();
+final bool isFirstRun = await PalFirstRun.isFirstRun();
 ```
 
 And for the custom calls
 
 ```dart
 // First time (true), then (false)
-final bool isFirstAPICall = await PalestineFirstRun.isFirstCall('call_api');
+final bool isFirstAPICall = await PalFirstRun.isFirstCall('call_api');
 ```

@@ -29,7 +29,7 @@ import 'package:palestine_trusted_device/palestine_trusted_device.dart';
 Just as easy as this
 
 ```dart
-PalestineTrustedDevice.check(
+PalTrustedDevice.check(
       onFail: () {
         // Not Secure Env Detected
       },
@@ -39,7 +39,7 @@ PalestineTrustedDevice.check(
 Customizing checks available too
 
 ```dart
-PalestineTrustedDevice.check(
+PalTrustedDevice.check(
       checkRealDevice: true, // Android + IOS
       checkDevMode: false, // Android
       checkOnExternalStorage: false, // Android
@@ -53,7 +53,7 @@ PalestineTrustedDevice.check(
 It's possible to await until the check is done
 
 ```dart
-await PalestineTrustedDevice.check(
+await PalTrustedDevice.check(
       onFail: () {
         // Not Secure Env Detected
       },

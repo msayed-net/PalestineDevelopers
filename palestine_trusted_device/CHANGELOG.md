@@ -2,6 +2,10 @@
 
 * Improvements
 
+## 0.0.6
+
+* Shorten class names.
+
 ## 0.0.5
 
 * Code Analysis.

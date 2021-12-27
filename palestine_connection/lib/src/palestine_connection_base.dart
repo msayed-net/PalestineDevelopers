@@ -3,12 +3,12 @@ import 'dart:developer' as developer;
 import 'dart:html';
 import 'dart:io';
 
-class PalestineConnection {
-  factory PalestineConnection() => _singleton;
-  PalestineConnection._internal() {
-    developer.log('--PalestineConnection-- (Instance Created --> Singleton)');
+class PalConnection {
+  factory PalConnection() => _singleton;
+  PalConnection._internal() {
+    developer.log('--PalConnection-- (Instance Created --> Singleton)');
   }
-  static final PalestineConnection _singleton = PalestineConnection._internal();
+  static final PalConnection _singleton = PalConnection._internal();
 
   /// Connection check variable
   bool hasConnection = false;
@@ -21,7 +21,7 @@ class PalestineConnection {
   ///---
   /// Start periodic process to check connection..
   void initialize({
-    String domain = PalestineConnectionDomain.random,
+    String domain = PalDomain.random,
     required int periodicInSeconds,
     required VoidCallback onConnectionLost,
     required VoidCallback onConnectionRestored,
@@ -31,17 +31,17 @@ class PalestineConnection {
 
     timer = Timer.periodic(Duration(seconds: periodicInSeconds),
         (Timer timer) async {
-      if (domain == PalestineConnectionDomain.random) {
+      if (domain == PalDomain.random) {
         final List<String> _domainsList = <String>[
-          PalestineConnectionDomain.google,
-          PalestineConnectionDomain.github,
-          PalestineConnectionDomain.yahoo,
-          PalestineConnectionDomain.facebook,
-          PalestineConnectionDomain.microsoft,
-          PalestineConnectionDomain.youtube,
-          PalestineConnectionDomain.twitter,
-          PalestineConnectionDomain.wikipedia,
-          PalestineConnectionDomain.instagram,
+          PalDomain.google,
+          PalDomain.github,
+          PalDomain.yahoo,
+          PalDomain.facebook,
+          PalDomain.microsoft,
+          PalDomain.youtube,
+          PalDomain.twitter,
+          PalDomain.wikipedia,
+          PalDomain.instagram,
         ];
         domain = (_domainsList..shuffle()).first;
       }
@@ -83,7 +83,7 @@ class PalestineConnection {
   }
 }
 
-class PalestineConnectionDomain {
+class PalDomain {
   static const String random = 'random';
   static const String google = 'google.com';
   static const String github = 'github.com';

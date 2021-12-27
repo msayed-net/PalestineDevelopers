@@ -5,14 +5,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class PalestineTrustedDevice {
-  factory PalestineTrustedDevice() => _singleton;
-  PalestineTrustedDevice._internal() {
-    developer
-        .log('--PalestineTrustedDevice-- (Instance Created --> Singleton)');
+class PalTrustedDevice {
+  factory PalTrustedDevice() => _singleton;
+  PalTrustedDevice._internal() {
+    developer.log('--PalTrustedDevice-- (Instance Created --> Singleton)');
   }
-  static final PalestineTrustedDevice _singleton =
-      PalestineTrustedDevice._internal();
+  static final PalTrustedDevice _singleton = PalTrustedDevice._internal();
 
   /// channel name
   static const MethodChannel _channel =
