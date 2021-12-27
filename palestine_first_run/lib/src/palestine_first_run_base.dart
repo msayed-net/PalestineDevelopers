@@ -1,27 +1,27 @@
-import 'package:hive/hive.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PalestineFirstRun {
-  static const String _boxName = 'palestine_first_run';
+  // static const String _boxName = 'palestine_first_run';
   static const String _isFirstRunKey = 'is_first_run';
 
   static Future<bool> isFirstRun() async {
-    final Box<dynamic> _box = await Hive.openBox(_boxName);
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    if (_box.get(_isFirstRunKey) == 'false') {
+    if (prefs.getString(_isFirstRunKey) == 'false') {
       return false;
     } else {
-      _box.put(_isFirstRunKey, 'false');
+      prefs.setString(_isFirstRunKey, 'false');
       return true;
     }
   }
 
   static Future<bool> isFirstCall(String name) async {
-    final Box<dynamic> _box = await Hive.openBox(_boxName);
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    if (_box.get(name) == 'false') {
+    if (prefs.get(name) == 'false') {
       return false;
     } else {
-      _box.put(name, 'false');
+      prefs.setString(name, 'false');
       return true;
     }
   }
