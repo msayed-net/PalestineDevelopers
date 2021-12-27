@@ -6,9 +6,11 @@
 
 ## Flutter Packages
 
-* [![Pub](https://img.shields.io/badge/Palestine%20Trusted%20Device-pub-blue)](https://pub.dev/packages/palestine_trusted_device)
-
 * [![Pub](https://img.shields.io/badge/Palestine%20Connection-pub-blue)](https://pub.dev/packages/palestine_connection)
+
+* [![Pub](https://img.shields.io/badge/Palestine%20First%20Run-pub-blue)](https://pub.dev/packages/palestine_first_run)
+
+* [![Pub](https://img.shields.io/badge/Palestine%20Trusted%20Device-pub-blue)](https://pub.dev/packages/palestine_trusted_device)
 
 * [![Pub](https://img.shields.io/badge/localize%20and%20translate-pub-blue)](https://pub.dev/packages/localize_and_translate) .. will be replaced
 
