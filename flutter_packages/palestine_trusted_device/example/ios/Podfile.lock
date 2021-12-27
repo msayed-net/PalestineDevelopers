@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - palestine_trusted_device (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - palestine_trusted_device (from `.symlinks/plugins/palestine_trusted_device/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  palestine_trusted_device:
+    :path: ".symlinks/plugins/palestine_trusted_device/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  palestine_trusted_device: de5156320c3acbcbc308eeadd1c9734607ade537
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.11.2
