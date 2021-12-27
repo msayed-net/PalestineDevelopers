@@ -1,0 +1,31 @@
+name: palestine_first_run
+description: Lightweight and easy check if the app runs for its first time, apply that to custom calls.
+version: 0.0.1
+
+homepage: https://github.com/msayed-net/PalestineDevelopers
+
+environment:
+  sdk: ">=2.15.1 <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  hive: ^2.0.5
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.palestine_first_run
+        pluginClass: PalestineFirstRunPlugin
+      ios:
+        pluginClass: PalestineFirstRunPlugin
+      web:
+        pluginClass: PalestineFirstRunWeb
+        fileName: palestine_first_run_web.dart
